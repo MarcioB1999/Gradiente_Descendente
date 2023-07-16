@@ -21,44 +21,40 @@ struct funcao{
 
 
     char *expressao;
-    double *var;
     No *raiz;
 
     funcao(char *expr){
         raiz = NULL;
         expressao = expr;
-        var = NULL;
     }
 
-    void vetorVar(double *vetor){
-        var = vetor;
-    }
 
-    double valor(){
+    double valor(double *vetor){
         if(raiz == NULL){
             raiz = (No*) malloc(sizeof(No));
             interpretador(expressao,raiz);
         }
-        return func(raiz);
+        
+        return func(raiz, vetor);
     }
 
 
-    double func(No *no){
+    double func(No *no, double *vetor){
  
         if(no->operacao == '-'){
-            return func(no->prox_esq)-func(no->prox_dir);
+            return func(no->prox_esq,vetor)-func(no->prox_dir,vetor);
         }
         if(no->operacao == '+'){
-            return func(no->prox_esq)+func(no->prox_dir);
+            return func(no->prox_esq,vetor)+func(no->prox_dir,vetor);
         }
         if(no->operacao == '/'){
-            return func(no->prox_esq)/func(no->prox_dir);
+            return func(no->prox_esq,vetor)/func(no->prox_dir,vetor);
         }
         if(no->operacao == '*'){
-            return func(no->prox_esq)*func(no->prox_dir);
+            return func(no->prox_esq,vetor)*func(no->prox_dir,vetor);
         }
 
-        return var[stoi(&(no->operacao))];
+        return vetor[stoi(&(no->operacao))];
     }
 
     //vai interpretar e criar a arvore da expressao
@@ -111,10 +107,8 @@ struct funcao{
 
 int main(){
     double vetor[] = {2,3,4};
-    funcao func("((1-2)*0)");
-    func.vetorVar(vetor);
-
-    cout<<"valor da expressao ="<<func.valor()<<"\n";
+    funcao func("((1-2)*0)");//((3-4)*2)
+    cout<<"valor da expressao ="<<func.valor(vetor)<<"\n";
     
     return 0;
 }
