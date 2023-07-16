@@ -4,6 +4,11 @@
 #include <cstring>
 using namespace std;
 
+/*
+Tudo parece esta indo MT bem, contudo, n consegue manter os ponteiros apontados para os lugares corretos
+Pois como não estava imaginando no começo, por n programar em c++ a mt tempo, ao sair da funcao e ele desalocar
+as memorias das variaveis criadas por ela, os ponteiros apontados antes mudam
+*/
 
 struct No{
     char operacao;
@@ -67,6 +72,8 @@ char* interpretador(char *expr, No *no_anterior){
         //cout<<"lado esquerdo \n";
         No no_esq;
         no_anterior->prox_esq = &no_esq;
+        cout<<"no esquerdo e = "<<&no_esq<<"\n";
+        cout<<"filho esquerdo do pai "<<no_anterior<<" e = "<<no_anterior->prox_esq<<"\n";
 
 
         char *prox_expr = &expr[1];
@@ -104,6 +111,7 @@ char* interpretador(char *expr, No *no_anterior){
 }
 
 
+
 int main(){
 
     
@@ -118,12 +126,8 @@ int main(){
     funcao func;
     func.vetorVar(2);
     func.var[0] = 1;
-    func.var[1] = 2;
-    No filho_dir = *(raiz.prox_dir);
-    No filho_esq = *(raiz.prox_esq);
-    cout<<"no raiz operacao = "<<raiz.operacao<<"\n";
-    cout<<"operacao = "<<filho_dir.operacao<<"\n";
-    cout<<"operacao = "<<filho_esq.operacao<<"\n";
+
+
     //cout<<"valor inicial ="<<func.func(&raiz)<<"\n";
     
     return 0;
