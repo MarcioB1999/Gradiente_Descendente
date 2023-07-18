@@ -1,46 +1,45 @@
-#include <iostream>
 #include <math.h>
 #include <stdlib.h>
-#include <cstring>
+#include <iostream>
 using namespace std;
 
+struct No{
+    char operacao;
+    No *prox_dir;
+    No *prox_esq;
 
+    No(){
+        prox_dir = NULL;
+        prox_esq = NULL;
+    }
+};
 
-struct funcao{
-
-    struct No{
-        char operacao;
-        No *prox_dir;
-        No *prox_esq;
-
-        No(){
-            prox_dir = NULL;
-            prox_esq = NULL;
-        }
-    };
-
+class funcao{
+    public:
 
     char *expressao;
     No *raiz;
+    int n;
 
+    public:
     funcao(char *expr){
         raiz = NULL;
         expressao = expr;
     }
 
 
-    double valor(double *vetor){
+    double get_valor(double *vetor){
         if(raiz == NULL){
-            raiz = (No*) malloc(sizeof(No));
+            raiz = (No*)malloc(sizeof(No*));
             interpretador(expressao,raiz);
         }
-        
+ 
         return func(raiz, vetor);
     }
 
-
+    private:
     double func(No *no, double *vetor){
- 
+
         if(no->operacao == '-'){
             return func(no->prox_esq,vetor)-func(no->prox_dir,vetor);
         }
@@ -104,14 +103,5 @@ struct funcao{
     }
 
 };
-
-int main(){
-    double vetor[] = {2,3,4};
-    funcao func("((1-2)*0)");//((3-4)*2)
-    cout<<"valor da expressao ="<<func.valor(vetor)<<"\n";
-    
-    return 0;
-}
-
 
 
