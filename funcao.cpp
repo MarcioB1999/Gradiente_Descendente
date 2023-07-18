@@ -53,6 +53,9 @@ class Funcao{
         if(no->operacao == '*'){
             return func(no->prox_esq,vetor)*func(no->prox_dir,vetor);
         }
+        if(no->operacao == '^'){
+            return pow(func(no->prox_esq,vetor),func(no->prox_dir,vetor));
+        }
 
         return vetor[stoi(&(no->operacao))];
     }
