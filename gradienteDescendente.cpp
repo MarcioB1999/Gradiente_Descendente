@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <iostream>
 #include "funcao.cpp"
 
 using namespace std;
@@ -9,17 +7,17 @@ void printa_vetor(double *v,int n){
     for(int i=0;i<n-1;i++){
         cout<<v[i]<<",";
     }
-    cout<<v[n]<<") \n";
+    cout<<v[n-1]<<") \n";
 };
 
 
-class gradiente_descendente{
+class GradienteDescendente{
     private:
     int n = 0;
-    funcao *func;
+    Funcao *func;
 
     public:
-    gradiente_descendente(funcao *Funcao,int qtd_variaveis){
+    GradienteDescendente(Funcao *Funcao,int qtd_variaveis){
         n = qtd_variaveis;
         func = Funcao;
        
@@ -42,10 +40,10 @@ class gradiente_descendente{
             qtd++;
             
             gradiente = Gradiente(ponto);
-            //cout<<"ponto = ";
-            //printa_vetor(ponto,n);
-            //cout<<"gradiente = ";
-            //printa_vetor(gradiente,n);
+            cout<<"ponto = ";
+            printa_vetor(ponto,n);
+            cout<<"gradiente = ";
+            printa_vetor(gradiente,n);
             
             for(int i=0;i<n;i++){
                 prox_ponto[i] = ponto[i]-taxa_aprendizagem*gradiente[i];
@@ -63,7 +61,7 @@ class gradiente_descendente{
     }
     
     private:
-    double *Gradiente(double *ponto,double delta=0.1){
+    double *Gradiente(double *ponto,double delta=0.001){
         double *gradiente = (double*) malloc(n*sizeof(double));
         
         double ponto_original;
@@ -95,23 +93,3 @@ class gradiente_descendente{
 
 
 };
-
-int main(){
-    
-    
-    funcao func("(1/0)");
-    double v[] = {2,1};
-    cout<<func.get_valor(v);//   y/x = 1/2
-    //gradiente_descendente metodo(&func,2);
-    
-    //double *ponto_final = metodo.Descida_Gradiente(0.5,50);
-    /*
-    for(int i=0;i<2;i++){
-        cout<<"x["<<i<<"] = "<<ponto_final[i]<<"\n";
-    }
-    */
-    //cout<<"valor final = "<<func.get_valor(ponto_final);
-  
-
-    return 0;
-}

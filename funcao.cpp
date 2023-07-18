@@ -14,7 +14,8 @@ struct No{
     }
 };
 
-class funcao{
+
+class Funcao{
     public:
 
     char *expressao;
@@ -22,7 +23,7 @@ class funcao{
     int n;
 
     public:
-    funcao(char *expr){
+    Funcao(char *expr){
         raiz = NULL;
         expressao = expr;
     }
@@ -33,7 +34,7 @@ class funcao{
             raiz = (No*)malloc(sizeof(No*));
             interpretador(expressao,raiz);
         }
- 
+        
         return func(raiz, vetor);
     }
 
@@ -103,5 +104,4 @@ class funcao{
     }
 
 };
-
 
