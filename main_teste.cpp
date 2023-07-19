@@ -6,8 +6,8 @@ int main(){
     
     Funcao func("((400/x)+y)");
 
-    double v[] = {20,10};
-    cout<<func.get_valor()<<"\n";
+    double v[] = {2,15};
+    cout<<func.get_valor(v)<<"\n";
     /*
     GradienteDescendente metodo(&func,2);
 

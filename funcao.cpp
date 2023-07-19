@@ -90,8 +90,10 @@ class Funcao{
 
         }else{
             //caso base
+
             char letras[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m',
                              'n','o','p','q','r','s','v','u','t','w','x','y','z'};
+
             if(busca(letras,expr[0],26)){
                 //quer dizer que o elemento representa uma variavel
 
@@ -109,7 +111,7 @@ class Funcao{
                     
 
                     point[0] = caractere[0];
-                    point[0] = caractere[1];
+                    point[1] = caractere[1];
 
                     no_anterior->operacao = point;
 
