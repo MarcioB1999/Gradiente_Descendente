@@ -2,20 +2,15 @@
 \
 ainda esta em construção :)
 mas praticamente quase la
-por enquanto a estrutura pra representar funcoes a partir de expressoes
-reconhece apenas operações simples. Ja se tem o algoritmo do gradiente funcionando. Agora é a parte
+por enquanto a estrutura pra representar funcoes a partir de expressoes,
+reconhece apenas operações simples. Ja se tem o algoritmo do gradiente funcionando(n testei com reconhecimento de variaveis). Agora é a parte
 de fazer o algoritmo d funcao reconhecer funcoes mais complexas como 
 \
 ln(x)\
 tg(x)\
-x^(x)\
 e assim por diante ...\
 \
-##OBS: o algoritmo de reconhecimento de expressoes, reconhece por numeros em vez de letras para representar variaveis, e no caso, esses numeros representam
-o indice da variavel em questao no vetor \
-EXEMPLO:\
-v=[1,2,3], nesse caso x=1,y=2,z=3\
-contudo no codigo 0=1,1=2,2=3, portanto teriamos a seguinte expressao\
-((0+1)*2) = ((1+2)*3) = 9
+##OBS: ele reconhece oque é variavel e constantes da expressão, contudo não implementei para receber prioridade no reconhecimento de variaveis(mas é so receber um vetor). 
+Por enquanto a prioridade é quem vem primeiro na expressão. Por exemplo (y+x) e o vetor {1,2}, o um irá representar o y e dois irá representar o x.
 
 
