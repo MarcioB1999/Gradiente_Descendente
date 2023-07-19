@@ -38,7 +38,8 @@ class GradienteDescendente{
         while(erro>0.001 && qtd < parada){
             
             qtd++;
-            
+            cout<<"iteracao = "<<qtd<<"\n";
+            cout<<"valor da funcao = "<<func->get_valor(ponto)<<"\n";
             gradiente = Gradiente(ponto);
             cout<<"ponto = ";
             printa_vetor(ponto,n);
@@ -49,8 +50,9 @@ class GradienteDescendente{
                 prox_ponto[i] = ponto[i]-taxa_aprendizagem*gradiente[i];
 
             }
-            cout<<"======================================= \n";
             erro = abs((func->get_valor(prox_ponto)-func->get_valor(ponto))/func->get_valor(ponto));
+            cout<<"erro = "<<erro<<"\n";
+            cout<<"======================================= \n";
             for(int i = 0;i<n; i++){
                 ponto[i] = prox_ponto[i];
             }
