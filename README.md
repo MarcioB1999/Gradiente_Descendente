@@ -22,7 +22,7 @@ com $\lambda$ próximo de zero quanto o usuário desejar.
 
 ## Código
 
-Basicamente para se ter uma intância da classe, o construtor irá receber um objeto da classe função, link do repositório, e a quantidade de variáveis da função(em breve não será mais necessário). Para o usuário, apenas se tem acesso ao método Descida_Gradiente
+Basicamente para se ter uma intância da classe, o construtor irá receber um objeto da classe função, https://github.com/MarcioB1999/Interpretador_funcao, e a quantidade de variáveis da função(em breve não será mais necessário). Para o usuário, apenas se tem acesso ao método Descida_Gradiente
 
 ### Descida_Gradiente (Double taxa_aprendizagem, Int parada ):
 >####     Argumentos:
