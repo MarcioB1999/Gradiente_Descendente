@@ -28,7 +28,7 @@ Basicamente para se ter uma intância da classe, o construtor irá receber um ob
 >####     Argumentos:
 >>#####    Taxa_aprendizagem: O quanto se quer percorrer na direção do gradiente.
 >>##### Parada: Funciona como parada precoce, o número máximo de iterações.
->#### Retorno: Retorna um ponteiro double para o vetor $\textbf{x}^{k}=\min_{\textbf{x}} \phi \left(f\left(\textbf{x}\right)\right)$ (Nesse caso $\phi$ se refere ao método de gradiente descendente).
+>#### Retorno: Retorna um ponteiro double para o vetor $\textbf{x}^{k}=\min_{\textbf{x}} f\left(\textbf{x}\right)$ (Nesse caso tambem se refere a mínimos locais, não apenas mínimos globais).
 
 
 ## OBS:
