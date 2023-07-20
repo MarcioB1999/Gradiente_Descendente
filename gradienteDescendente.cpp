@@ -1,4 +1,4 @@
-#include "funcao.cpp"
+#include "C:\Users\marcio\Documents\Interpretador_funcao\funcao.cpp"
 #include<time.h>
 
 using namespace std;
