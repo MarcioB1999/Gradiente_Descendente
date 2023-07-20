@@ -1,4 +1,5 @@
 #include "funcao.cpp"
+#include<time.h>
 
 using namespace std;
 
@@ -28,6 +29,8 @@ class GradienteDescendente{
         double erro = 99999;
         double *ponto = (double*) malloc(n*sizeof(double));
         double *gradiente;
+        srand(time(NULL));
+
         for(int i=0;i<n;i++){
             ponto[i] = rand(); 
         }
