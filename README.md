@@ -2,7 +2,7 @@
 
 ## Algoritmo
 
-O método gradiente consiste basicamente que a partir de um ponto $\textbf{x}^{0}=\left(x_{1}^{0},...,x_{n}^{0}\right) \in \mathbf{R}^{n}$, percorremos a direção do vetor gradiente sucessivamente de modo a obter o mínimo local de uma função $f\left(\textbf{x}\right)$.
+O método gradiente consiste basicamente em um método iterativo que a partir de um ponto inicial $\textbf{x}^{0}=\left(x_{1}^{0},...,x_{n}^{0}\right) \in \mathbf{R}^{n}$, percorremos a direção do vetor gradiente sucessivamente de modo a obter o mínimo local de uma função $f\left(\textbf{x}\right)$.
 
 <img height="180em" src="https://github.com/MarcioB1999/Gradiente_Descendente/blob/main/imgs/gradienteMetodo.png"/>
 
