@@ -2,22 +2,22 @@
 
 using namespace std;
 int main(){
-    
-    
-    Funcao func("((x-y)^2)");
+    //((x^2)*y)
+    double v[]={3,2};
+    //(((((x-3)^2)+((y-3)^2))*(((x-1)^2)+((y-2)^2)))*(z^2)) função q dar erro
 
-    double v[] = {2,15};
-    cout<<func.get_valor(v)<<"\n";
+    Funcao func("(x^6)");
+    int n=1;
 
-    GradienteDescendente metodo(&func,2);
+    GradienteDescendente metodo(&func,n);
 
-    double *ponto_final = metodo.Descida_Gradiente(0.3,500);
+    double *ponto_final = metodo.Descida_Gradiente(50,3);
 
-    for(int i=0;i<2;i++){
+    for(int i=0;i<n;i++){
         cout<<"x["<<i<<"] = "<<ponto_final[i]<<"\n";
     }
 
-    cout<<"valor final = "<<func.get_valor(ponto_final);
+    cout<<"valor final = "<<func.Get_valor(ponto_final);
 
     return 0;
 }
