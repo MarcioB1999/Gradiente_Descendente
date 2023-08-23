@@ -30,9 +30,9 @@ com $\varepsilon$ próximo de zero quanto o usuário desejar.
 
 A regra wolfe se dar para aumentar o desempenho do método, ele se dar pela escolha do parâmetros $\alpha$, em vez de um valor fixo. Portanto, para cada iteração $k$ do algoritmo, se escolhe $\alpha_{k}$, de modo a satisfazer as desigualdades (1.1) e (1.2).
 
-(1.1) $f\left(x^{k}-\alpha^{k}\bigtriangledown f\left(\text{x}^{k}\right)\right)\leq f\left(x^{k}\right)-\alpha_{k}\theta_{1}\mid \mid \bigtriangledown f\left(\text{x}^{k}\right)\mid \mid$
+(1.1) $f\left(x^{k}-\alpha^{k}\bigtriangledown f\left(\text{x}^{k}\right)\right)\leq f\left(x^{k}\right)-\alpha_{k}\theta_{1}\langle \bigtriangledown f\left(\text{x}^{k}\right),\bigtriangledown f\left(\text{x}^{k}\right)\rangle$
 
-(1.2) $-\langle \bigtriangledown f\left(\text{x}^{k+1}\right),\bigtriangledown f\left(\text{x}^{k}\right)\rangle \geq -\theta_{2}\mid\mid \bigtriangledown f\left(\text{x}^{k}\right)\mid\mid $
+(1.2) $-\langle \bigtriangledown f\left(\text{x}^{k+1}\right),\bigtriangledown f\left(\text{x}^{k}\right)\rangle \geq -\theta_{2}\langle \bigtriangledown f\left(\text{x}^{k}\right),\bigtriangledown f\left(\text{x}^{k}\right)\rangle $
 
 OBS:Por enquanto o método não se dar bem com funções que crescem rapidamente. Oque pode tentar solucionar, será mudança no tipode dados, para uns mais altos, ou uma melhor escolha dos pontos iniciais, ou pelomenos que não sejam tão grandes.
 
