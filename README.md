@@ -34,6 +34,8 @@ A regra wolfe se dar para aumentar o desempenho do método, ele se dar pela esco
 
 (1.2) $-\langle \bigtriangledown f\left(\text{x}^{k+1}\right),\bigtriangledown f\left(\text{x}^{k}\right)\rangle \geq -\theta_{2}\mid\mid \bigtriangledown f\left(\text{x}^{k}\right)\mid\mid $
 
+OBS:Por enquanto o método não se dar bem com funções que crescem rapidamente. Oque pode tentar solucionar, será mudança no tipode dados, para uns mais altos, ou uma melhor escolha dos pontos iniciais, ou pelomenos que não sejam tão grandes.
+
 ## Código
 
 Basicamente para se ter uma intância da classe, o construtor irá receber um objeto da classe função, https://github.com/MarcioB1999/Interpretador_funcao, e a quantidade de variáveis da função(em breve não será mais necessário). Para o usuário, apenas se tem acesso ao método Descida_Gradiente
