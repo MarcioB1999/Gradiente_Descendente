@@ -16,7 +16,7 @@ class GradienteDescendente{
     }
 
 
-    double* Descida_Gradiente(int parada=100,int type_error=1){
+    double* Descida_Gradiente(int parada=100,int type_error=1,double alpha=0){
         double erro = 99999,taxa_aprendizagem;
         double *ponto = (double*) malloc(n*sizeof(double));
         
@@ -47,8 +47,12 @@ class GradienteDescendente{
             gradiente = Gradiente(ponto);
             cout<<"gradiente = ";
             printa_vetor(gradiente,n);
-
-            taxa_aprendizagem = Wolfe(0.2,0.5,ponto,gradiente);
+            if(alpha!=0){
+                taxa_aprendizagem = alpha;
+            }else{
+                taxa_aprendizagem = Wolfe(0.2,0.5,ponto,gradiente);
+            }
+            
             cout<<"taxa de aprendizagem = "<<taxa_aprendizagem<<"\n";
             
             for(int i=0;i<n;i++){
@@ -115,14 +119,14 @@ class GradienteDescendente{
         double deriv_di = -ProdutoInterno(gradiente,gradiente);//<f'(x),d>
 
         srand(time(NULL));
-        int q=0;
-        while(q<10){
-            q++;
+        //int q=0;
+        while(true){
+            //q++;
 
             for(int i=0;i<n;i++){//semi reta x+alpha.d
                 new_x[i] = x[i]-alpha*gradiente[i];
             }
-            
+            /*
             cout<<"alpha = "<<alpha<<"\n";
             cout<<"vetor = ";
             printa_vetor(new_x,n);
@@ -133,6 +137,7 @@ class GradienteDescendente{
             }else{
                 cout<<"Falso \n";
             }
+            
             cout<<"new gradiente = ";
             printa_vetor(Gradiente(new_x),n);
             cout<<"gradiente = ";
@@ -143,7 +148,7 @@ class GradienteDescendente{
             }else{
                 cout<<"Falso \n";
             }
-            
+            */
             if(func->Get_valor(new_x)-(func->Get_valor(x)+alpha*theta1*deriv_di) <= erro
                 &&
              -ProdutoInterno(Gradiente(new_x),gradiente)-tetha2*deriv_di >=  -erro){
@@ -154,7 +159,7 @@ class GradienteDescendente{
             }else{
                 alpha_inf = alpha;
             }
-            cout<<"("<<alpha_inf<<","<<alpha_sup<<")\n";
+            //cout<<"("<<alpha_inf<<","<<alpha_sup<<")\n";
 
             if(alpha_sup == 0){
                 
@@ -165,9 +170,9 @@ class GradienteDescendente{
                 alpha = random(alpha_inf,alpha_sup);
             }
 
-            cout<<"...................................................................\n";
+            //cout<<"...................................................................\n";
         }
-        return 0.01;
+        //return 0.01;
 
     }
 
