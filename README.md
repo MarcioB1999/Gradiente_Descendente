@@ -34,7 +34,7 @@ A regra wolfe se dar para aumentar o desempenho do método, ele se dar pela esco
 
 (1.2) $-\langle \bigtriangledown f\left(\text{x}^{k+1}\right),\bigtriangledown f\left(\text{x}^{k}\right)\rangle \geq -\theta_{2}\langle \bigtriangledown f\left(\text{x}^{k}\right),\bigtriangledown f\left(\text{x}^{k}\right)\rangle $
 
-OBS:Por enquanto o método não se dar bem com funções que crescem rapidamente. Oque pode tentar solucionar, será mudança no tipode dados, para uns mais altos, ou uma melhor escolha dos pontos iniciais, ou pelomenos que não sejam tão grandes.
+OBS:Por enquanto o método não se dar bem com funções que crescem rapidamente. Oque pode tentar solucionar, seria mudança no tipo de dados, para mais altos, ou uma melhor escolha dos pontos iniciais, ou pelo menos que não sejam tão grandes.
 
 ## Código
 
