@@ -42,9 +42,10 @@ Basicamente para se ter uma intância da classe, o construtor irá receber um ob
 
 ### Descida_Gradiente (Double taxa_aprendizagem, Int parada ):
 >####     Argumentos:
->>#####    Taxa_aprendizagem: O quanto se quer percorrer na direção do gradiente.
->>##### Parada: Número máximo de iterações.
->#### Retorno: Retorna um ponteiro double para o vetor $\textbf{x}^{k}=\min_{\textbf{x}} f\left(\textbf{x}\right)$ (Nesse caso tambem se refere a mínimos locais, não apenas mínimos globais).
+>>#####    Taxa_aprendizagem_user: O quanto se quer percorrer na direção do gradiente (Padrão = 0.001).
+>>##### Parada: Número máximo de iterações (Padrão = 100).
+>>##### Erro_user: Valor no qual se admite para o erro (Padrão = 0.00001)
+>#### Retorno: Retorna um ponteiro double para o vetor $\textbf{x}^{k}$=\{ $x \in \mathbf{R}^{n} | \min_{\textbf{x}} f\left(\textbf{x}\right) $\}(Nesse caso tambem se refere a mínimos locais, não apenas mínimos globais).
 
 
 ## OBS:
