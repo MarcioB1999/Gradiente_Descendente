@@ -1,0 +1,3 @@
+[submodule "Interpretador_funcao"]
+	path = Interpretador_funcao
+	url = https://github.com/MarcioB1999/Interpretador_funcao.git
