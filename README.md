@@ -50,3 +50,4 @@ Basicamente para se ter uma intância da classe, o construtor irá receber um ob
 ## OBS:
 ainda esta em construção 😀
 mas praticamente quase la, ele sofre limitações pela classe função recebida como argumento.
+Algumas funcionalidades foram retiradas para fins de integrar de maneira correta com o projeto de intrepetar funções. Não apenas isso, tenho a intenção de voltar com eles de maneira mais inteligente usando conceitos de padrões de projeto.
