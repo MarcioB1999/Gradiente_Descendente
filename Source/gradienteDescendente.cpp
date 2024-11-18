@@ -7,11 +7,14 @@ using namespace std;
 
 
 
-gradienteDescendente::gradienteDescendente(Funcao *Funcao,int qtd_variaveis) : n(qtd_variaveis),func(Funcao){};
+gradienteDescendente::gradienteDescendente(Funcao *Funcao) : n(Funcao->Get_dimensao()),func(Funcao){};
 
 
-double * gradienteDescendente::Descida_Gradiente(int parada,double alpha){
-    double erro{99999}, taxa_aprendizagem {alpha};
+double * gradienteDescendente::Descida_Gradiente(int parada,
+                                                 double taxa_aprendizagem_user,
+                                                 double erro_user)
+{
+    double erro{99999}, taxa_aprendizagem {taxa_aprendizagem_user};
     double *ponto =(double*) calloc(this->n,sizeof(double));
     
     double *vetor_erro;
@@ -22,7 +25,6 @@ double * gradienteDescendente::Descida_Gradiente(int parada,double alpha){
 
 
     int qtd = 0;
-    cout<<"chegou aqui \n";
     while(erro>0.00001 && qtd < parada){
         
         qtd++;
@@ -52,6 +54,8 @@ double * gradienteDescendente::Descida_Gradiente(int parada,double alpha){
 
     return prox_ponto;
 }
+
+
 
 double * gradienteDescendente::Gradiente(double *ponto,double delta){
     double *gradiente {(double*) malloc(this->n*sizeof(double))};

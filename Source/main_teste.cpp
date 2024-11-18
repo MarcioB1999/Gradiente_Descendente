@@ -4,23 +4,21 @@
 
 using namespace std;
 int main(){
-    cout<<"1 \n";
     //char expressao[] {"((((x-5)^2)+((y-3)^2))+((z-2)^2))"};
     char expressao[] {"(((((((1.5-a)-(b*2))^2)+(((2-a)-(b*2.2))^2))+(((3.5-a)-(b*2.9))^2))+(((1.7-a)-(b*1.6))^2))+(((4-a)-(b*4.3))^2))"};
     //A função acima representa o minimo quadrados de uma 
     //regressão linear para os pontos {(1.5,2) (2,2.2) (3.5,2.9) (1.7,1.6) (4,4.3)}
     //ou seja o problema de otimização é o de treinamento para uma regressão linear simples
-    char *i = expressao;
     lista variaveis_ordem;
     variaveis_ordem.Add('a');
     variaveis_ordem.Add('b');
     
     
-    Funcao func(i);
+    Funcao func(expressao);
     func.Interpretar();
-    int n=2;
+    int n {func.Get_dimensao()};
 
-    gradienteDescendente metodo(&func,n);
+    gradienteDescendente metodo(&func);
 
     double *ponto_final = metodo.Descida_Gradiente(500,0.01);
 
